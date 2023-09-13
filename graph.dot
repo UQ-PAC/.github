@@ -1,0 +1,30 @@
+digraph G {
+GCC[label="compiler,\nlinker"]
+binary[shape=box, label="ELF binary"]
+C[shape=box, label="C\nsource code"]
+BIR[shape=box, label="BIR\nprogram semantics\n(human readable)"]
+ADT[shape=box, label="ADT\nprogram semantics\n(machine readable)"]
+BASIL[label="BASIL\n(bil_to_boogie_translator)"]
+specification[shape="note", label="rely/guarantee\npre/post\nspecifications"]
+annotated_boogie_program[shape=box, label="annotated\nBoogie\nprogram"]
+boogie[label="Boogie\nverifier"]
+ASL [shape=note, label="ASL\ninstruction semantics\nspecifications"]
+ASLp [label="ASLp,\nBAP plugin"]
+BAP [label="BAP"]
+C -> GCC
+GCC -> binary
+binary -> BAP
+BAP -> BIR
+BAP -> ADT
+BAP-> ASLp
+ASL -> ASLi
+ASLp-> ASLi
+ASLi -> ASLp
+ASLp -> BAP [label="instruction\nsemantics"]
+ADT -> BASIL
+binary -> readelf
+readelf -> BASIL [label="stdout"]
+specification -> BASIL
+BASIL -> annotated_boogie_program
+annotated_boogie_program -> boogie
+}
