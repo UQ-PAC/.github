@@ -1,6 +1,7 @@
 ## Project Summary 
 
-- [bil-to-boogie-translator](https://github.com/UQ-PAC/bil-to-boogie-translator) The "BASIL" project: translating lifted Aarch64 binaries to boogie annotated weakest pre-condition and rely/guarantee for information flow. 
+- [BASIL, formerly bil-to-boogie-translator](https://github.com/UQ-PAC/bil-to-boogie-translator) Translating lifted Aarch64 binaries to 
+    boogie annotated weakest pre-condition and rely/guarantee for information flow. 
 
 ![BASIL project diagram](graph.svg)
 
